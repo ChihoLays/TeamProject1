@@ -8,6 +8,9 @@ camera_url = 'rtsp://admin:ict@kmitl@192.168.8.111:554/Streaming/Channels/101'
 cap = cv2.VideoCapture(camera_url)
 
 
+
+
+
 with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose:
     while cap.isOpened():
         ret, frame = cap.read()
@@ -38,4 +41,8 @@ with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as 
     cap.release()
     cv2.destroyAllWindows()
 
-mp_drawing.DrawingSpec
+act_list = [' ', 'stand', 'walk', 'fall', 'lay down']
+# demo
+act = 1
+activity = act_list[act]
+print(activity)
